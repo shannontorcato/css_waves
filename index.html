@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
+    <title>CSS Waves</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: aliceblue;
+            background-color: #242424;
+            overflow-x: hidden;
+        }
+
+        section{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+            padding: 100px 20vw;
+        }
+
+        .blue{
+            background: cornflowerblue;
+        }
+
+        .red{
+            background: rgb(180, 24, 56);
+        }
+
+        .green{
+            background: #2E702E;
+        }
+
+        .cadet{
+            background: #5F9EA0;
+        }
+
+        .curve{
+            position: absolute;
+            height: 225px;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .curve::before{
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 100% 50%;
+            width: 55%;
+            height: 100%;
+            background: #242424;
+            transform: translate(85%, 60%);
+        }
+
+        .curve::after{
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 100% 50%;
+            width: 55%;
+            height: 100%;
+            background:cornflowerblue;
+            transform: translate(-4%, 40%);
+            z-index: -1;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(140% + 1.3px);
+            height: 186px;
+        }
+
+        .wave .shape-fill {
+            fill: #242424;
+        }
+
+        .spacer {
+            aspect-ratio: 960/300;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .layer1 {
+            background-image: url('./layered-waves.svg');
+        }
+
+        .layer2{
+            background-image: url('./layered-waves-blue.svg');
+        }
+
+        .flip {
+            transform: rotate(180deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="blue">
+        <h1>Nice Curves</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet maxime quia fugiat, blanditiis labore nesciunt recusandae nihil reiciendis non sed architecto neque tenetur explicabo vel at fuga delectus earum distinctio.</p>
+        <div class="curve"></div>
+    </section>
+    <section>
+        <h1>Nice Curves</h1>
+        <p>Iure deserunt explicabo harum dolorum et earum dolore quam aliquam optio amet, molestias eligendi consectetur? Dolorem quos tenetur nulla obcaecati optio hic atque ut, saepe quod quibusdam architecto similique magni.</p>
+
+    </section>
+    <section class="red">
+        <h1>Nice Curves</h1>
+        <p>Repellendus voluptates id magnam deleniti minus provident molestiae harum rerum assumenda temporibus ut nam quas dolor fugiat, unde impedit ab perferendis ducimus blanditiis numquam. Quod ex magni obcaecati architecto ipsam.</p>
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+    <section>
+        <h1>Nice Curves</h1>
+        <p>Sequi vero dolor excepturi maiores nam error amet eum ipsum, aut magni assumenda a dolorum veritatis quis odit nisi soluta facere omnis ea dolorem. Ipsum hic pariatur earum ab minus.</p>
+    </section>
+    <div class="spacer layer1"></div>
+    <section class="green">
+        <h1>Nice Curves</h1>
+        <p>Illo nobis, soluta voluptas aut perferendis quis sapiente accusamus. Facilis expedita assumenda reprehenderit dolorem aliquid fugiat unde tenetur quidem iusto nesciunt natus sint consequuntur itaque, quae incidunt voluptate impedit adipisci.</p>
+    </section>
+    <div class="spacer layer1 flip"></div>
+    <section>
+        <h1>Nice Curves</h1>
+        <p>Maxime id est ab, consectetur cumque delectus repudiandae aliquid mollitia aut aspernatur rerum amet velit, perspiciatis, labore provident iste blanditiis earum enim alias quidem quod sequi quis nulla qui! Earum!</p>
+    </section>
+    <div class="spacer layer2"></div>
+    <section class="cadet">
+        <h1>Nice Curves</h1>
+        <p>Nisi libero voluptates illo mollitia quos ab unde iusto quasi accusantium quo nostrum impedit officiis sint, animi excepturi laborum, necessitatibus maxime dolore aut soluta numquam? Recusandae qui sint harum perferendis.</p>
+    </section>
+    <div class="spacer layer2 flip"></div>
+    <section>
+        <h1>Nice Curves</h1>
+        <p>Qui architecto eum esse a quasi blanditiis recusandae obcaecati eveniet consequuntur consectetur, quisquam, cum ex vel modi error sed ducimus molestiae quaerat cumque unde, soluta voluptatibus. Quibusdam quo soluta optio.</p>
+    </section>
+</body>
+</html>
